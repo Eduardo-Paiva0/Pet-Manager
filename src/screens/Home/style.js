@@ -24,6 +24,20 @@ const styles = StyleSheet.create({
         fontSize: 24,
         color: '#9D7856',
     },
+
+    buttonNext:{
+        backgroundColor: '#9D7856',
+        padding: 20,
+        width: '20%',
+        borderRadius: 20,
+        marginTop: 30
+    },
+
+    textButton:{
+        textAlign: 'center',
+        fontSize: 35,
+        color: '#FFFFFF'
+    }
 })
 
 export default styles
