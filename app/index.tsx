@@ -5,11 +5,11 @@ export default function Index() {
     <View
       style={{
         flex: 1,
-        justifyContent: "center",
+        justifyContent: "top",
         alignItems: "center",
       }}
     >
-      <Text>Oiiii</Text>
+      <Text>Encaixe a rotina do seu <Text style = {{color: '#9D7856'}}>pet</Text> na sua!</Text>
     </View>
   );
 }
