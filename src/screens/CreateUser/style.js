@@ -21,12 +21,6 @@ const styles = StyleSheet.create({
         width: 150,
         height: 150,
     },
-    /* dogLogin: {
-        width: 300,
-        height: 300,
-        justifyContent: 'center',
-        alignItems: 'center',
-    }, */
     text : {
         fontSize: 40,
         color: '#000'
@@ -37,7 +31,7 @@ const styles = StyleSheet.create({
     },
     alert: {
         fontSize: 18,
-        color: '#9D7856',
+        color: '#FFF',
         textAlign: 'center',
         marginBottom: 20,
     },
@@ -46,7 +40,7 @@ const styles = StyleSheet.create({
         borderRadius: 40,
         backgroundColor: '#D9D9D9',
         padding: 15,
-        marginBottom: 30,
+        marginBottom: 20,
         width: '100%'
     },
     button: {
