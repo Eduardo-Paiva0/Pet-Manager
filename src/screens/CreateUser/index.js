@@ -84,7 +84,9 @@ export default function CreateUser({ navigation }) {
                 >
                     <Text style={styles.textButton}>Cadastre-se</Text>
                 </TouchableOpacity>
+
             </View>
+                <Image style={styles.paws} source={require('../../../assets/Icons/PawsBg.png')} />
             </>
             
             

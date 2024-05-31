@@ -3,6 +3,7 @@ import { StyleSheet } from "react-native";
 import Home from '../src/screens/Home'
 import Login from '../src/screens/Login'
 import CreateUser from '../src/screens/CreateUser'
+import Schedule from '../src/screens/Schedule'
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
@@ -12,7 +13,7 @@ const Stack = createNativeStackNavigator();
 export default function Index() {
   return (
     <Stack.Navigator
-      initialRouteName="Home"
+      initialRouteName="Schedule"
       screenOptions={{
         headerShown: false,
         
@@ -24,6 +25,8 @@ export default function Index() {
         <Stack.Screen name="Login" component={Login} options={{ headerShown: false}} />
 
         <Stack.Screen name="CreateUser" component={CreateUser} options={{ headerShown: false}} />
+
+        <Stack.Screen name="Schedule" component={Schedule} options={{ headerShown: false}} />
 
 
 

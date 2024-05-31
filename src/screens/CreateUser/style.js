@@ -4,8 +4,6 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: '#D3AD8A',
         padding: 30,
-        alignItems: 'center',
-        justifyContent: 'center',
         margin: 30,
         borderRadius: 6
     },
@@ -48,19 +46,13 @@ const styles = StyleSheet.create({
         padding: 10,
         borderRadius: 10,
         marginBottom: 20,
-        width: '100%'
+        width: '100%',
+        marginTop: 30,
     },
     textButton: {
         fontSize: 20,
         textAlign: 'center',
         color: '#FFF'
-    },
-    buttonCreate: {
-        padding: 10,
-        borderRadius: 10,
-        marginBottom: 10,
-        width: '100%',
-        backgroundColor: '#20120C'
     },
     buttonCreateText: {
         fontSize: 20,
@@ -70,7 +62,12 @@ const styles = StyleSheet.create({
     headerInput: {
         fontSize: 15,
         textAlign: 'left',
-        marginBottom: 5
+        marginBottom: 5,
+        fontWeight: 'bold',
+    },
+    paws: {
+        height: 350,
+        width: 350,
     }
 })
 

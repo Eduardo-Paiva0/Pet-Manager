@@ -97,7 +97,7 @@ export default function Login({ navigation }) {
             </TouchableOpacity>
             </View>
 
-            {/* <Image style={styles.dogLogin} source={require('../../../assets/Icons/Dog2.png')} /> */}
+         <Image style={styles.dogLogin} source={require('../../../assets/Icons/Dog2.png')} />
         </View>
     )
 }
