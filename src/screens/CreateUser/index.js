@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { firebase } from '../../services/firebaseConfig'
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { getDatabase, ref, set } from "firebase/database";
@@ -11,6 +11,9 @@ export default function CreateUser({ navigation }) {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [errorCreateUser, setErrorCreateUser] = useState(null)
+    const nameInputRef = useRef(null);
+    const emailInputRef = useRef(null);
+    const passwordInputRef = useRef(null);
 
     const validate = () => {
         if (nome == "") {
@@ -57,25 +60,47 @@ export default function CreateUser({ navigation }) {
                 )}
                 <Text style={styles.headerInput}>Nome</Text>
                 <TextInput
+                    ref={nameInputRef}
                     style={styles.input}
                     placeholder='Nome'
                     value={nome}
-                    onChangeText={setNome} />
+                    onChangeText={setNome}
+                    returnKeyType="next"
+                    onSubmitEditing={() => {
+                        if (emailInputRef.current) {
+                            emailInputRef.current.focus();
+                        }
+                    }}
+                    blurOnSubmit={false}
+                 />
 
                 <Text style={styles.headerInput}>E-mail</Text>
                 <TextInput
+                    ref={emailInputRef}
                     style={styles.input}
                     placeholder='E-mail'
                     value={email}
-                    onChangeText={setEmail} />
+                    onChangeText={setEmail}
+                    returnKeyType="next"
+                    onSubmitEditing={() => {
+                        if (passwordInputRef.current) {
+                           passwordInputRef.current.focus();
+                        }
+                    }}
+                    blurOnSubmit={false}
+                 />
 
                 <Text style={styles.headerInput}>Senha</Text>
                 <TextInput
+                    ref={passwordInputRef}
                     style={styles.input}
                     secureTextEntry={true}
                     placeholder='Senha'
                     value={password}
-                    onChangeText={setPassword} />
+                    onChangeText={setPassword}
+                    returnKeyType="done"
+                    onSubmitEditing={validate}
+                 />
 
                 <TouchableOpacity
                     style={styles.button}

@@ -42,23 +42,25 @@ function Tabs() {
               tabBarActiveTintColor: "#000", //Cor de ícones ativos
               tabBarInactiveTintColor: "#000", //Cor de ícones inativos
               tabBarActiveBackgroundColor: '#61472E',
-              tabBarShowLabel: true,
-              tabBarStyle: { backgroundColor: '#D9D9D9' },
+              tabBarShowLabel: false,
+              tabBarStyle: { backgroundColor: '#D9D9D9',
+                height: 70,
+              },
               headerShown: false,
               
           }}
       >
-          <Tab.Screen name="Schedule" component={Schedule}
+          <Tab.Screen name="Meus Agendamentos" component={Schedule}
               options={{
                   tabBarIcon: ({ color }) => (
-                      <MaterialCommunityIcons name="check-circle-outline" color={color} size={32} />
+                      <MaterialCommunityIcons name="calendar-check-outline" color={color} size={32} />
                   ),
               }}
           />
           <Tab.Screen name="Menu" component={Menu}
               options={{
                   tabBarIcon: ({ color }) => (
-                      <MaterialCommunityIcons name="account" color={color} size={32} />
+                      <MaterialCommunityIcons name="menu" color={color} size={32} />
                   ),
               }}
           />

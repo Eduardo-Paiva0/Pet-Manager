@@ -3,25 +3,30 @@ import { firebase } from '../../services/firebaseConfig'
 import { getAuth, onAuthStateChanged, signInWithEmailAndPassword } from 'firebase/auth'
 import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native'
 import styles from './style'
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 export default function Schedule(){
 
     return (
-        <View>
-            <View style={styles.containerCat}>
-            
+        <View style = {styles.screenSchedule}>
+            <View style = {styles.containerTop}>
             <Image style={styles.cat} source={require('../../../assets/Icons/Cat.png')} />
-            </View>
-            <View style={styles.containerGreetings}>
             <Text style={styles.text}>Olá,</Text>
             <Text style = {styles.textHighlight}>Usuário <Text style={styles.text}>!</Text></Text>
             </View>
 
+            <View style = {styles.containerSchedule}>
+            <Text style={styles.text}>Seus <Text style = {styles.textHighlight}>agendamentos</Text></Text>
 
-            <View style={styles.containerSchedule}>
-            <Text style={styles.textSchedule}>Seus <Text style = {styles.textHighlightSchedule}>agendamentos</Text></Text>
+            <TouchableOpacity
+                style={styles.buttonNewSchedule}
+               /* onPress={() => navigation.navigate('Schedule')*} */
+            >
+            <Text style={styles.textButton}><MaterialCommunityIcons name="alarm-plus" size={30} /> FAÇA AGORA UM AGENDAMENTO </Text>
+            </TouchableOpacity>
             </View>
-            <Text style={styles.textSchedule}>----------------------------------------------------------------</Text>
+
+
 
         </View>
     )

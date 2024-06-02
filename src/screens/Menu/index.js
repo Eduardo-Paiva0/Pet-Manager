@@ -3,26 +3,28 @@ import { firebase } from '../../services/firebaseConfig'
 import { getAuth, onAuthStateChanged, signInWithEmailAndPassword } from 'firebase/auth'
 import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native'
 import styles from './style'
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-export default function Schedule(){
+export default function Schedule({navigation}){
 
     return (
-        <View>
-            <View style={styles.containerCat}>
-            
-            <Image style={styles.cat} source={require('../../../assets/Icons/Cat.png')} />
+        <View style = {styles.screenMenu}>
+            <View style = {styles.containerTop}>
+            <Text style = {styles.text}>Usuário:  <Text style = {styles.textHighlight}> Usuário </Text></Text>
+            <Text style = {styles.text}>E-mail: <Text style = {styles.textHighlight}> exemplo@gmail.com</Text></Text> 
+            <Image style={styles.paws1} source={require('../../../assets/Icons/PawsBg.png')} />
+            <View style = {styles.containerLogoff}>
+            <TouchableOpacity
+                style={styles.buttonLogOff}
+                onPress={() => navigation.navigate('Login')}
+            >
+            <Text style={styles.textButton}> Sair <MaterialCommunityIcons name="door-open" size={30} /></Text>
+            </TouchableOpacity>
             </View>
-            <View style={styles.containerGreetings}>
-            <Text style={styles.text}>Olá,</Text>
-            <Text style = {styles.textHighlight}>Usuário <Text style={styles.text}>!</Text></Text>
             </View>
-
-
-            <View style={styles.containerSchedule}>
-            <Text style={styles.textSchedule}>Menu</Text>
+            <View style = {styles.containerBottom}>
+            <Image style={styles.paws2} source={require('../../../assets/Icons/PawsBg.png')} />
             </View>
-            <Text style={styles.textSchedule}>----------------------------------------------------------------</Text>
-
         </View>
     )
 
