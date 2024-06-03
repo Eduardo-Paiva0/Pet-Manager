@@ -8,7 +8,7 @@ import { getDatabase, onValue, ref } from "firebase/database";
 const db = getDatabase();
 const auth = getAuth();
 
-export default function Schedule(){
+export default function Schedule({navigation}){
     const [nome, setNome] = useState("")
 
     const recuperarDados = () => {
@@ -33,9 +33,14 @@ export default function Schedule(){
             <View style = {styles.containerSchedule}>
             <Text style={styles.text}>Seus <Text style = {styles.textHighlight}>agendamentos</Text></Text>
 
+            <View style={{flexDirection: 'row', alignItems: 'center'}}>
+            <View style={{flex: 1, height: 1, backgroundColor: 'black', marginTop: 15}} />
+            </View>
+            
+
             <TouchableOpacity
                 style={styles.buttonNewSchedule}
-               /* onPress={() => navigation.navigate('Schedule')*} */
+                onPress={() => navigation.navigate('NewSchedule')}
             >
             <Text style={styles.textButton}><MaterialCommunityIcons name="alarm-plus" size={30} /> FAÇA AGORA UM AGENDAMENTO </Text>
             </TouchableOpacity>
