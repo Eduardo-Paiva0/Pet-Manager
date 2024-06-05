@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import Schedule from ".";
 
 const styles = StyleSheet.create({
 	screenSchedule: {
@@ -46,6 +47,27 @@ const styles = StyleSheet.create({
         padding: 15,
         width: '90%',
     },
+	action: {
+        flexDirection: 'row'
+    },
+
+    data: {
+        color: '#FFF',
+		fontSize: 18
+    },
+
+    descricao: {
+        color: '#FFF',
+        fontSize: 18
+    },
+	schedule: {
+		marginTop: 10,
+        backgroundColor: "#685543",
+        borderRadius: 15,
+        padding: 10,
+        width: '90%',
+		alignSelf: 'center',
+	}
 });
 
 export default styles;
