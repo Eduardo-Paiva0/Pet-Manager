@@ -3,6 +3,7 @@ import Login from '../src/screens/Login'
 import CreateUser from '../src/screens/CreateUser'
 import Schedule from '../src/screens/Schedule'
 import NewSchedule from '../src/screens/NewSchedule'
+import EditSchedule from '../src/screens/EditSchedule'
 import Menu from '../src/screens/Menu'
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native"
@@ -32,6 +33,8 @@ export default function Index() {
         <Stack.Screen name="Schedule" component={Schedule} options={{ headerShown: false}} />
 
         <Stack.Screen name="NewSchedule" component={NewSchedule} options={{ headerShown: false}} />
+
+        <Stack.Screen name="EditSchedule" component={EditSchedule} options={{ headerShown: false}} />
 
         
 
