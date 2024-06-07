@@ -107,23 +107,21 @@ export default function Schedule({navigation}){
                 data={schedules}
                 renderItem={({ item }) =>
                     <View style={styles.schedule}>
-                        <View>
-                            <Text style={styles.data}>{item.date}</Text>
-                            <Text style={styles.descricao}>{item.petname}</Text>
-                            <Text style={styles.descricao}>{item.description}</Text>
-                        </View>
-                        <View style={styles.action}>
-                            <TouchableOpacity
+                        <View style={styles.scheduleList}>
+                            <TouchableOpacity style={styles.scheduleData}
                                 onPress={() => navigation.navigate('EditSchedule', { id: item.id })} //colocar tela de EditSchedule quando puder
                             >
-                                <Text style={styles.descricao}><MaterialCommunityIcons name="file-document-edit-outline" size={32} /></Text>
+                                <Text style={styles.data}> {item.date} | {item.petname} | {item.description}</Text>
                             </TouchableOpacity>
+                        </View>
+                        <View style={styles.scheduleButton}>
                             <TouchableOpacity
                                 onPress={() => deleteSchedule(item.id)}
                             >
                                 <Text style={styles.descricao}><MaterialCommunityIcons name="delete-outline" size={32} /></Text>
                             </TouchableOpacity>
                         </View>
+
                     </View>
                 }
             />

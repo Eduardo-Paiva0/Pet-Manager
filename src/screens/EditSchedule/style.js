@@ -74,13 +74,18 @@ const styles = StyleSheet.create({
     },
 
     textButtonSchedule: {
-        Color: '#FFF',
+        color: '#FFF',
         fontSize: 24,
+        fontWeight: 'bold',
     },
 
     ButtonSchedule: {
         height: '100%',
         backgroundColor: '#20120C',
+        padding: '5%',
+        alignItems: 'center',
+        borderTopRightRadius: 25,
+        borderTopLeftRadius: 25,
     },
 
 })

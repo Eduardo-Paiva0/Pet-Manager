@@ -84,7 +84,7 @@ export default function EditSchedule({navigation, route}){
             <Text style={styles.textButtonGoBack}><MaterialCommunityIcons name="arrow-left-thin-circle-outline" size={30} />
               Voltar</Text>
             </TouchableOpacity>
-            <Text style={styles.text}>Faça seu <Text style = {styles.textHighlight}> agendamento </Text>!</Text>
+            <Text style={styles.text}>Edite seu <Text style = {styles.textHighlight}> agendamento </Text>!</Text>
       </View>
         <View style={styles.containerMid}>
           <Text style={styles.textContainer}>Seu nome:</Text>

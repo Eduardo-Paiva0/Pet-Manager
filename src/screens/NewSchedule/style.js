@@ -19,7 +19,6 @@ const styles = StyleSheet.create({
 
     text: {
         fontSize: 24,
-		color: "#000",
         fontWeight: "bold",
         textAlign: 'center',
         marginTop: '5%',
@@ -44,7 +43,6 @@ const styles = StyleSheet.create({
 
     textContainer: {
         fontSize: 16,
-		color: "#000",
         fontWeight: "bold",
         marginTop: '1%',
     },
@@ -74,13 +72,18 @@ const styles = StyleSheet.create({
     },
 
     textButtonSchedule: {
-        Color: '#FFF',
+        color: '#FFF',
         fontSize: 24,
+        fontWeight: 'bold',
     },
 
     ButtonSchedule: {
         height: '100%',
         backgroundColor: '#20120C',
+        padding: '5%',
+        alignItems: 'center',
+        borderTopRightRadius: 25,
+        borderTopLeftRadius: 25,
     },
 
 })

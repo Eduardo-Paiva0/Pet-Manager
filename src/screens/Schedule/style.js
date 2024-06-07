@@ -47,27 +47,31 @@ const styles = StyleSheet.create({
         padding: 15,
         width: '90%',
     },
-	action: {
-        flexDirection: 'row'
-    },
-
+	
     data: {
         color: '#FFF',
-		fontSize: 18
+		fontSize: 22,
+        fontWeight: 'bold',
+        justifyContent: 'space-between',    
     },
 
-    descricao: {
-        color: '#FFF',
-        fontSize: 18
-    },
 	schedule: {
 		marginTop: 10,
         backgroundColor: "#685543",
         borderRadius: 15,
-        padding: 10,
+        borderWidth: 1.5,
+        borderColor: '#20120C',
+        padding: 5,
         width: '90%',
-		alignSelf: 'center',
-	}
+		alignSelf: 'center',  
+        alignContent: 'center',
+	},
+
+    scheduleButton: {
+        width: '10%'
+    },
+
+
 });
 
 export default styles;
