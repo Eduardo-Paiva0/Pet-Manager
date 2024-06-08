@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { firebase } from '../../services/firebaseConfig'
 import { getAuth } from 'firebase/auth'
 import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native'
@@ -20,6 +20,13 @@ export default function NewSchedule({navigation}){
   const [petage, setPetAge] = useState("")
   const [date, setDate] = useState("")
   const [errorCreateSchedule, setErrorCreateSchedule] = useState(null)
+
+  const nameInputRef = useRef(null)
+  const adressInputRef = useRef(null)
+  const procedureInputRef = useRef(null)
+  const phoneInputRef = useRef(null)
+  const petNameInputRef = useRef(null)
+  const petAgeInputRef = useRef(null)
 
   const validate = () => {
     if (name == "") {
@@ -72,13 +79,14 @@ export default function NewSchedule({navigation}){
             <Text style={styles.text}>Faça seu <Text style = {styles.textHighlight}> agendamento </Text>!</Text>
       </View>
         <View style={styles.containerMid}>
-          <Text style={styles.textContainer}>Seu nome:</Text>
+          <Text style={styles.textContainer}>Seu Nome:</Text>
           <TextInput style={styles.input}
           value={name}
+          ref={nameInputRef}
           onChangeText={setName}
           onSubmitEditing={() => {
-            if (procedureInputRef.current) {
-                procedureInputRef.current.focus();
+            if (adressInputRef.current) {
+                adressInputRef.current.focus();
             }
         }}
           ></TextInput>
@@ -86,17 +94,17 @@ export default function NewSchedule({navigation}){
           <Text style={styles.textContainer}>Seu Endereço:</Text>
           <TextInput style={styles.input}
           value={adress}
+          ref={adressInputRef}
           onChangeText={setAdress}
           ></TextInput>
 
           <Text style={styles.textContainer}>Seu Telefone:</Text>
-
-          <TextInputMask style={styles.input} placeholder='Ex: (75) 9885-18251'
+          <TextInputMask style={styles.input} placeholder='Ex: (99) 9999-99999'
           type={'cel-phone'}
           options={{
             maskType: 'BRL',
             withDDD: true,
-            dddMask: '(75) '
+            dddMask: '(**) '
           }}
           ref={phoneInputRef}
           value={phone}
@@ -125,6 +133,7 @@ export default function NewSchedule({navigation}){
 
           <Text style={styles.textContainer}>Nome do Pet:</Text>
           <TextInput style={styles.input2}
+          ref={petNameInputRef}
           value={petname}
           returnKeyType="next"
           onSubmitEditing={() => {
@@ -150,7 +159,6 @@ export default function NewSchedule({navigation}){
           options={{
             dateFormat: 'DD/MM/YYYY',
           }}
-          ref={dateInputRef}
           value={date}
           onChangeText={setDate}
           returnKeyType="done"

@@ -9,12 +9,12 @@ const styles = StyleSheet.create({
         padding: 20,
         marginTop: 30,
 		position: "relative",
-		height: 300,
+		height: '30%',
 	},
 
     containerSchedule: {
-        flex: 1,
-        alignItems: 'center'
+        alignItems: 'center',
+        marginBottom: '1%'
     },
 
 	cat: {
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     buttonNewSchedule: {
-        marginTop: 40,
+        marginTop: '8%',
         backgroundColor: "#9D7856",
         borderRadius: 20,
         padding: 15,
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     },
 
 	schedule: {
-		marginTop: 10,
+		marginTop: 5,
         backgroundColor: "#685543",
         borderRadius: 15,
         borderWidth: 1.5,
@@ -71,7 +71,10 @@ const styles = StyleSheet.create({
         width: '10%'
     },
 
-
+    containerList: {
+        flex: 1,
+        marginBottom: '1%'
+    },
 });
 
 export default styles;

@@ -89,10 +89,6 @@ export default function Schedule({navigation}){
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                         <View style={{ flex: 1, height: 1, backgroundColor: 'black', marginTop: 15 }} />
                     </View>
-
-
-
-
                     <TouchableOpacity
                         style={styles.buttonNewSchedule}
                         onPress={() => navigation.navigate('NewSchedule')}
@@ -101,6 +97,7 @@ export default function Schedule({navigation}){
                     </TouchableOpacity>
                 </View>
 
+                <View style={styles.containerList}>
                 <FlatList
                 showsVerticalScrollIndicator={false}
                 data={schedules}
@@ -123,7 +120,7 @@ export default function Schedule({navigation}){
 
                     </View>
                 }
-            />
+            /></View>
 
 
 

@@ -28,7 +28,7 @@ export default function Index() {
 
         <Stack.Screen name="Login" component={Login} options={{ headerShown: false}} />
 
-        <Stack.Screen name="CreateUser" component={CreateUser} options={{ headerShown: false}} />
+        <Stack.Screen name="CreateUser" component={CreateUser} options={{ title: 'Voltar'}} />
 
         <Stack.Screen name="Schedule" component={Schedule} options={{ headerShown: false}} />
 
