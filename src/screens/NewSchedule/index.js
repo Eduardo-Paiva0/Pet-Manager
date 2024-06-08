@@ -5,6 +5,8 @@ import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native'
 import styles from './style'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { getDatabase, onValue, ref, push, set } from "firebase/database";
+import { MaskedTextInput } from 'react-native-mask-text';
+import { TextInputMask } from 'react-native-masked-text';
 const db = getDatabase();
 const auth = getAuth();
 
@@ -110,7 +112,13 @@ export default function NewSchedule({navigation}){
           ></TextInput>
 
           <Text style={styles.textContainer}>Seu Telefone:</Text>
-          <TextInput style={styles.input}
+          <TextInputMask style={styles.input} placeholder='Ex: (75) 9885-18251'
+          type={'cel-phone'}
+          options={{
+            maskType: 'BRL',
+            withDDD: true,
+            dddMask: '(75) '
+          }}
           ref={phoneInputRef}
           value={phone}
           returnKeyType="next"
@@ -120,12 +128,13 @@ export default function NewSchedule({navigation}){
             }
         }}
           onChangeText={setPhone}
-          ></TextInput>
+          ></TextInputMask>
 
           <Text style={styles.textContainer}>Procedimento:</Text>
           <TextInput style={styles.input}
           ref={procedureInputRef}
           value={description}
+          returnKeyType="next"
           onSubmitEditing={() => {
             if (petNameInputRef.current) {
                 petNameInputRef.current.focus();
@@ -138,6 +147,7 @@ export default function NewSchedule({navigation}){
           <TextInput style={styles.input2}
           ref={petNameInputRef}
           value={petname}
+          returnKeyType="next"
           onSubmitEditing={() => {
             if (petAgeInputRef.current) {
               petAgeInputRef.current.focus();
@@ -147,25 +157,25 @@ export default function NewSchedule({navigation}){
           ></TextInput>
 
           <Text style={styles.textContainer}>Idade do Pet:</Text>
-          <TextInput style={styles.input2}
+          <TextInput style={styles.input2} placeholder= 'Ex: 3 Meses'
           ref={petAgeInputRef}
           value={petage}
-          onSubmitEditing={() => {
-            if (dateInputRef.current) {
-                dateInputRef.current.focus();
-            }
-        }}
+          returnKeyType="next"
           onChangeText={setPetAge}
           ></TextInput>
 
           <Text style={styles.text}>Escolha a data <Text style = {styles.textHighlight}>do agendamento </Text>!</Text>
-          <TextInput placeholder='    Ex:. XX/XX/XXXX' style={styles.input3}
+          <TextInputMask placeholder='    Ex:. XX/XX/XXXX' style={styles.input3} maxLength={10}
+          type={'datetime'}
+          options={{
+            dateFormat: 'DD/MM/YYYY',
+          }}
           ref={dateInputRef}
           value={date}
           onChangeText={setDate}
           returnKeyType="done"
           onSubmitEditing={validate}
-          ></TextInput>
+          ></TextInputMask>
 
         </View>
 
