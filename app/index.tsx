@@ -18,7 +18,7 @@ export default function Index() {
     <Stack.Navigator
       initialRouteName="Home"
       screenOptions={{
-        headerShown: false,
+        headerShown: true,
         
       }}
       >
@@ -32,9 +32,9 @@ export default function Index() {
 
         <Stack.Screen name="Schedule" component={Schedule} options={{ headerShown: false}} />
 
-        <Stack.Screen name="NewSchedule" component={NewSchedule} options={{ headerShown: false}} />
+        <Stack.Screen name="NewSchedule" component={NewSchedule} options={{ title: 'Voltar'}}/>
 
-        <Stack.Screen name="EditSchedule" component={EditSchedule} options={{ headerShown: false}} />
+        <Stack.Screen name="EditSchedule" component={EditSchedule} options={{ title: 'Voltar'}} />
 
         
 

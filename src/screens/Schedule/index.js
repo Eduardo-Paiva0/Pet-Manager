@@ -36,7 +36,7 @@ export default function Schedule({navigation}){
         });
     }
 
-    useEffect(() => {
+    useEffect(() => {recuperarDados();
         const listSchedule = query(ref(db, 'schedules/' + auth.currentUser.uid), orderByChild('date'));
         onValue(listSchedule, (snapshot) => {
             // Array que vai recer as tarefas para serem listadas
@@ -50,7 +50,6 @@ export default function Schedule({navigation}){
             // Seta o array preenchido no Hook de tarefas para serem listadas
             setSchedule(list)
         });
-        recuperarDados();
     }, [])
 
 

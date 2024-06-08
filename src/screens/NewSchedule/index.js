@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState } from 'react'
 import { firebase } from '../../services/firebaseConfig'
 import { getAuth } from 'firebase/auth'
 import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native'
@@ -10,16 +10,7 @@ import { TextInputMask } from 'react-native-masked-text';
 const db = getDatabase();
 const auth = getAuth();
 
-
 export default function NewSchedule({navigation}){
-
-  const nameInputRef = useRef(null);
-  const adressInputRef = useRef(null);
-  const phoneInputRef = useRef(null);
-  const procedureInputRef = useRef(null);
-  const petNameInputRef = useRef(null);
-  const petAgeInputRef = useRef(null);
-  const dateInputRef = useRef(null);
 
   const [name, setName] = useState("")
   const [adress, setAdress] = useState("")
@@ -78,40 +69,28 @@ export default function NewSchedule({navigation}){
                 <Text style={styles.alert}>{errorCreateSchedule}</Text>
             )}
       <View style = {styles.topContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate('Schedule')}>
-            <Text style={styles.textButtonGoBack}><MaterialCommunityIcons name="arrow-left-thin-circle-outline" size={30} />
-              Voltar</Text>
-            </TouchableOpacity>
             <Text style={styles.text}>Faça seu <Text style = {styles.textHighlight}> agendamento </Text>!</Text>
       </View>
         <View style={styles.containerMid}>
           <Text style={styles.textContainer}>Seu nome:</Text>
           <TextInput style={styles.input}
           value={name}
-          ref={nameInputRef}
-          returnKeyType="next"
+          onChangeText={setName}
           onSubmitEditing={() => {
-            if (adressInputRef.current) {
-                adressInputRef.current.focus();
+            if (procedureInputRef.current) {
+                procedureInputRef.current.focus();
             }
         }}
-          onChangeText={setName}
           ></TextInput>
 
           <Text style={styles.textContainer}>Seu Endereço:</Text>
           <TextInput style={styles.input}
-          ref={adressInputRef}
           value={adress}
-          returnKeyType="next"
-          onSubmitEditing={() => {
-            if (phoneInputRef.current) {
-                phoneInputRef.current.focus();
-            }
-        }}
           onChangeText={setAdress}
           ></TextInput>
 
           <Text style={styles.textContainer}>Seu Telefone:</Text>
+
           <TextInputMask style={styles.input} placeholder='Ex: (75) 9885-18251'
           type={'cel-phone'}
           options={{
@@ -130,6 +109,7 @@ export default function NewSchedule({navigation}){
           onChangeText={setPhone}
           ></TextInputMask>
 
+
           <Text style={styles.textContainer}>Procedimento:</Text>
           <TextInput style={styles.input}
           ref={procedureInputRef}
@@ -145,7 +125,6 @@ export default function NewSchedule({navigation}){
 
           <Text style={styles.textContainer}>Nome do Pet:</Text>
           <TextInput style={styles.input2}
-          ref={petNameInputRef}
           value={petname}
           returnKeyType="next"
           onSubmitEditing={() => {
@@ -165,6 +144,7 @@ export default function NewSchedule({navigation}){
           ></TextInput>
 
           <Text style={styles.text}>Escolha a data <Text style = {styles.textHighlight}>do agendamento </Text>!</Text>
+
           <TextInputMask placeholder='    Ex:. XX/XX/XXXX' style={styles.input3} maxLength={10}
           type={'datetime'}
           options={{
@@ -176,7 +156,6 @@ export default function NewSchedule({navigation}){
           returnKeyType="done"
           onSubmitEditing={validate}
           ></TextInputMask>
-
         </View>
 
         <View style={styles.containerBottom}>

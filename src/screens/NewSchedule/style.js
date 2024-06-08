@@ -37,8 +37,9 @@ const styles = StyleSheet.create({
         padding: '5%',
         margin: '5%',
         width: '90%',
-        height: '70%',
+        height: '75%',
         borderRadius: 5,
+        marginBottom: 50,
     },
 
     textContainer: {

@@ -8,7 +8,7 @@ import { getDatabase, onValue, ref, push, set } from "firebase/database";
 const db = getDatabase();
 const auth = getAuth();
 
-export default function EditSchedule({navigation, route}){
+export default function NewSchedule({navigation, route}){
 
   const [name, setName] = useState("")
   const [adress, setAdress] = useState("")
@@ -80,10 +80,6 @@ export default function EditSchedule({navigation, route}){
                 <Text style={styles.alert}>{errorCreateSchedule}</Text>
             )}
       <View style = {styles.topContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate('Schedule')}>
-            <Text style={styles.textButtonGoBack}><MaterialCommunityIcons name="arrow-left-thin-circle-outline" size={30} />
-              Voltar</Text>
-            </TouchableOpacity>
             <Text style={styles.text}>Edite seu <Text style = {styles.textHighlight}> agendamento </Text>!</Text>
       </View>
         <View style={styles.containerMid}>
